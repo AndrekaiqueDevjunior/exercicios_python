@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordens de Serviço</title>
+</head>
+
+
+
+
+<body>
+    <h1> Ordens de Serviço</h1> 
+
+    {% for ordem in ordens   %}
+
+        <article>
+            <h2> OS # {{ordem.numero}}</h2>
+
+            <p> Cliente: {{ordem.cliente}} </p>
+
+            <p> Status: {{ordem.status}} </p>
+        </article>
+        {% endfor %}
+</body>
+</html>

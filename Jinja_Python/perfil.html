@@ -1,0 +1,91 @@
+<h1>Olá, {{nome}} </h1>
+
+
+<p>Você possui {{quantidade_pedidos}} pedidos pendentes </p>
+
+
+<!-- jinja é um mecanismo de templates muito usado com python para gerar html dinamicamente no backend -->
+
+<!-- em ves de escrever um html totalmente fixo, voce criaum arquivo com espaços que serao preenchidos pelo python-->
+
+
+<!-- o que significa {{ }} ? as chavers duplas exibem valores: {{nome}}
+    
+{{nome}}
+
+{{cliente.email}}
+
+{{ordem_servico.valor_total }}
+
+
+-->
+
+<!-- condicionais 
+jinja tambem permite usar condicionais como if , else, endif e elif
+
+
+if = se 
+else = senao
+endif = fim se
+elif = senao se
+
+
+
+{% if cliente_ativo %} se cliente ativo 
+## o % significa que o que vem depois dele eh um comando do jinja 
+    <p>Cliente ativo</p>
+{% else %} se nao
+    <p> Cliente inativo </p>
+{% endif %} se nao se  
+
+
+
+
+
+
+## repeticoes 
+
+podemos percorrer uma lista:
+
+<ul> // ul significa desordenada lista nao ordenada 
+{% for servico in servicos %}
+ <li> // li significa item da lista
+ {{servico.descricao}} // servico eh uma variavel que vai percorrer a lista servicos e vai exibir a descricao de cada servico
+     R$ {{servico.valor}} // servico eh uma variavel que vai percorrer a lista servicos e vai exibir o valor de cada servico
+ </li>
+{%endfor%}
+</ul>
+
+dados enviados pelo python:
+
+
+servicos = [ // estamos declarando uma variavel chamada servicos e atribuindo a ela uma lista o {} significa que estamos criando um dicionario 
+{
+    "descricao": "Manutencao do computador",
+    "valor": 250
+
+},
+{
+    "descricao": "Instalacao de SSD",
+    "valor": 200
+}
+]
+
+##jinja com FASTAPI
+
+##ESTRUTURA BÁSICA:
+
+PROJETO/
+
+    main.py
+    templates/
+        index.html
+        login.html    
+        cadastro.html       
+
+        
+
+
+
+
+-->
