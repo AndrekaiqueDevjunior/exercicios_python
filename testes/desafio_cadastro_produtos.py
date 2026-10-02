@@ -37,7 +37,7 @@ for produto in produtos:
 
 
 #1. Buscar um específico:
-
+6
 #produtos[indice]["nome"]
 
 #2. Percorrer todos:
