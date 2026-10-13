@@ -15,15 +15,6 @@ chamados = [
     }
 ]
 
-{
-#1 - LISTAR CHAMADO
-#2 - BUSCHAR CHAMADO
-#3 - CRIAR CHAMADO
-#4 - ATUALIZAR_STATUS
-#5 - EXCLUIR CHAMADO
-#6 - FILTRAR POR STATUS
-#7 - SAIR
-}
 
 while True:
     print("1 - LISTAR CHAMADO ")
@@ -33,7 +24,7 @@ while True:
     print("5 - EXCLUIR CHAMADO ")
     print("6 - FILTRAR POR STATUS ")
     print("7 - CONTAR POR STAATUS ")
-
+    print("9 - Fechar Chamado ")
     opcao = int(input("Selecione uma opção: "))
 
     if opcao == 1:
@@ -160,3 +151,20 @@ while True:
                     return chamados
 
         resultado = buscar_por_usuario(chamados,buscar_usuario)
+
+    if opcao == 9:
+
+        fechar_chamado = int(input("Insira o  ID Do chamado: "))
+
+        def fechar_chamado_id(chamados,fechar_chamado):
+            for chamado in chamados:
+                if chamado["id"] == fechar_chamado:
+                    chamado["status"] = "fechado"
+                    return chamados
+                if chamado["status"] == "fechado":
+                    print("Não pode fechar um chamado que já foi fechado: ")
+
+
+            return None
+        resultado = fechar_chamado_id(chamados,fechar_chamado)
+        print(resultado)
